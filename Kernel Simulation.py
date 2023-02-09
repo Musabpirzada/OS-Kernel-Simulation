@@ -15,6 +15,14 @@ class Main_Menu:
         self.blank_label1 = Label(root, text='', height=2)
         self.blank_label1.pack()
 
+        def process_manage():
+            self.destroy_elements_main()
+            p_m = ProcessManagement()
+
+        self.btn_Process_m = Button(root, text="Process Management", command=process_manage, fg="White", bg="Red")
+        self.btn_Process_m.configure(width=50, height=2)
+        self.btn_Process_m.pack()
+
 class ProcessManagement:
     def __init__(self):
         self.blank_label = Label(root, text='', height=1)
