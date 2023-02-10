@@ -43,6 +43,16 @@ class Main_Menu:
         self.btn_io_m.configure(width=50, height=2)
         self.btn_io_m.pack()
 
+        def synchronization_func():
+            self.destroy_elements_main()
+            sync = synchronization()
+
+        self.blank_label4 = Label(root, text='', height=1)
+        self.blank_label4.pack()
+        self.btn_sync = Button(root, text="Synchronization", command=synchronization_func, fg="Black", bg="Green")
+        self.btn_sync.configure(width=50, height=2)
+        self.btn_sync.pack()
+
 class ProcessManagement:
     def __init__(self):
         self.blank_label = Label(root, text='', height=1)
@@ -63,4 +73,8 @@ class IO_Management:
     def __init__(self):
         self.manage_label = Label(root, text="I/O Management Block")
         self.manage_label.pack()
+
+class synchronization:
+    def __init__(self):
+        pass
 root.mainloop()
