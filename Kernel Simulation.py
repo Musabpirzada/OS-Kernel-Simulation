@@ -106,6 +106,12 @@ class IO_Management:
 class synchronization:
     def __init__(self):
         pass
+class Create:
+    def __init__(self):
+        pass
+class destroyProcess:
+    def __init__(self):
+        pass
 
 m_m = Main_Menu(root)
 root.mainloop()
