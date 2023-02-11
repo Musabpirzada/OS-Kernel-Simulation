@@ -73,6 +73,24 @@ class ProcessManagement:
         self.label_title.pack()
         self.blank_label1 = Label(root, text='', height=2)
         self.blank_label1.pack()
+
+        def create_process():
+            self.destroy_elements()
+            cc = Create()
+        self.create_process = Button(root, text="Create Process", command=create_process, fg="Black", bg="#E74C3C")
+        self.create_process.configure(width=50, height=2)
+        self.create_process.pack()
+        self.blank_label2 = Label(root, text='', height=1)
+        self.blank_label2.pack()
+
+        def destroy_process():
+            self.destroy_elements()
+            dp = destroyProcess()
+        self.destroy_process = Button(root, text="Destroy Process", command=destroy_process, fg="Black", bg="#EB984E")
+        self.destroy_process.configure(width=50, height=2)
+        self.destroy_process.pack()
+        self.blank_label3 = Label(root, text='', height=1)
+        self.blank_label3.pack()
 class MemoryManagement:
     def __init__(self):
         self.blank_label2 = Label(root, text='', height=1)
@@ -85,10 +103,9 @@ class IO_Management:
     def __init__(self):
         self.manage_label = Label(root, text="I/O Management Block")
         self.manage_label.pack()
-
 class synchronization:
     def __init__(self):
         pass
-    
+
 m_m = Main_Menu(root)
 root.mainloop()
