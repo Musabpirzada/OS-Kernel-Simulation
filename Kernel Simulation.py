@@ -53,6 +53,18 @@ class Main_Menu:
         self.btn_sync.configure(width=50, height=2)
         self.btn_sync.pack()
 
+    def destroy_elements_main(self):
+        self.label_title.destroy()
+        self.blank_label.destroy()
+        self.blank_label1.destroy()
+        self.blank_label2.destroy()
+        self.btn_Process_m.destroy()
+        self.blank_label3.destroy()
+        self.btn_memory_m.destroy()
+        self.btn_io_m.destroy()
+        self.btn_sync.destroy()
+        self.blank_label4.destroy()
+
 class ProcessManagement:
     def __init__(self):
         self.blank_label = Label(root, text='', height=1)
