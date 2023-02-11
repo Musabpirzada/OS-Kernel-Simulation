@@ -14,6 +14,6 @@ In main page there are buttons of following operations:
 </li>
 <li>I/O management
 </li>
-<li>Other Operations
+<li>Synchronization
 </li>
 </ul>
