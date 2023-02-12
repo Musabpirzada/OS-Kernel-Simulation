@@ -138,6 +138,16 @@ class ProcessManagement:
         self.ShowPro = Button(root, text="Show Processes", command=show_process, fg="Black", bg="#EB984E")
         self.ShowPro.configure(width=50, height=2)
         self.ShowPro.pack()
+
+        def back_main():
+            self.destroy_elements()
+            mm = Main_Menu(root)
+
+        self.blank_label6 = Label(root, text='', height=2)
+        self.blank_label6.pack()
+        self.back_to_main = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow', command=back_main)
+        self.back_to_main.configure(bd=2)
+        self.back_to_main.pack()
 class MemoryManagement:
     def __init__(self):
         self.blank_label2 = Label(root, text='', height=1)
