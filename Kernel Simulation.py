@@ -91,6 +91,17 @@ class ProcessManagement:
         self.destroy_process.pack()
         self.blank_label3 = Label(root, text='', height=1)
         self.blank_label3.pack()
+
+        def suspend_process():
+            self.destroy_elements()
+            sp = suspendprocess()
+        self.suspend_process = Button(root, text="Suspend Process", command=suspend_process, fg="Black", bg="#EB984E")
+        self.suspend_process.configure(width=50, height=2)
+        self.suspend_process.pack()
+        self.blank_label4 = Label(root, text='', height=1)
+        self.blank_label4.pack()
+
+
 class MemoryManagement:
     def __init__(self):
         self.blank_label2 = Label(root, text='', height=1)
@@ -110,6 +121,9 @@ class Create:
     def __init__(self):
         pass
 class destroyProcess:
+    def __init__(self):
+        pass
+class suspendprocess:
     def __init__(self):
         pass
 
