@@ -101,6 +101,16 @@ class ProcessManagement:
         self.blank_label4 = Label(root, text='', height=1)
         self.blank_label4.pack()
 
+        def resume_process():
+            self.destroy_elements()
+            rp = resume_process_block()
+
+        self.resume_process = Button(root, text="Resume Process", command=resume_process, fg="Black", bg="#EB984E")
+        self.resume_process.configure(width=50, height=2)
+        self.resume_process.pack()
+        self.blank_label5 = Label(root, text='', height=1)
+        self.blank_label5.pack()
+
 
 class MemoryManagement:
     def __init__(self):
@@ -124,6 +134,9 @@ class destroyProcess:
     def __init__(self):
         pass
 class suspendprocess:
+    def __init__(self):
+        pass
+class resume_process_block:
     def __init__(self):
         pass
 
