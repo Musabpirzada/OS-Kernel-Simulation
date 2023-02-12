@@ -130,6 +130,14 @@ class ProcessManagement:
         self.dispatchPro.pack()
         self.blank_label8 = Label(root, text='', height=1)
         self.blank_label8.pack()
+
+        def show_process():
+            self.destroy_elements()
+            sp = Show_Processes()
+
+        self.ShowPro = Button(root, text="Show Processes", command=show_process, fg="Black", bg="#EB984E")
+        self.ShowPro.configure(width=50, height=2)
+        self.ShowPro.pack()
 class MemoryManagement:
     def __init__(self):
         self.blank_label2 = Label(root, text='', height=1)
@@ -161,6 +169,9 @@ class process_priority_change:
     def __init__(self):
         pass
 class dispatch_and_scheduling:
+    def __init__(self):
+        pass
+class Show_Processes:
     def __init__(self):
         pass
 
