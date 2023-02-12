@@ -120,6 +120,16 @@ class ProcessManagement:
         self.process_priority.pack()
         self.blank_label7 = Label(root, text='', height=1)
         self.blank_label7.pack()
+
+        def dispatch_process():
+            self.destroy_elements()
+            das = dispatch_and_scheduling()
+
+        self.dispatchPro = Button(root, text="Dispatch Process", command=dispatch_process, fg="Black", bg="#EB984E")
+        self.dispatchPro.configure(width=50, height=2)
+        self.dispatchPro.pack()
+        self.blank_label8 = Label(root, text='', height=1)
+        self.blank_label8.pack()
 class MemoryManagement:
     def __init__(self):
         self.blank_label2 = Label(root, text='', height=1)
@@ -148,6 +158,9 @@ class resume_process_block:
     def __init__(self):
         pass
 class process_priority_change:
+    def __init__(self):
+        pass
+class dispatch_and_scheduling:
     def __init__(self):
         pass
 
