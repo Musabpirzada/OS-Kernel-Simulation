@@ -111,7 +111,15 @@ class ProcessManagement:
         self.blank_label5 = Label(root, text='', height=1)
         self.blank_label5.pack()
 
+        def change_process_priority():
+            self.destroy_elements()
+            cpp = process_priority_change()
 
+        self.process_priority = Button(root, text="Change Process Priority", command=change_process_priority, fg="Black", bg="#EB984E")
+        self.process_priority.configure(width=50, height=2)
+        self.process_priority.pack()
+        self.blank_label7 = Label(root, text='', height=1)
+        self.blank_label7.pack()
 class MemoryManagement:
     def __init__(self):
         self.blank_label2 = Label(root, text='', height=1)
@@ -137,6 +145,9 @@ class suspendprocess:
     def __init__(self):
         pass
 class resume_process_block:
+    def __init__(self):
+        pass
+class process_priority_change:
     def __init__(self):
         pass
 
