@@ -148,6 +148,26 @@ class ProcessManagement:
         self.back_to_main = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow', command=back_main)
         self.back_to_main.configure(bd=2)
         self.back_to_main.pack()
+
+    def destroy_elements(self):
+        self.label_title.destroy()
+        self.blank_label1.destroy()
+        self.blank_label.destroy()
+        self.create_process.destroy()
+        self.destroy_process.destroy()
+        self.suspend_process.destroy()
+        self.resume_process.destroy()
+        self.process_priority.destroy()
+        self.blank_label2.destroy()
+        self.blank_label3.destroy()
+        self.blank_label4.destroy()
+        self.blank_label5.destroy()
+        self.blank_label7.destroy()
+        self.dispatchPro.destroy()
+        self.ShowPro.destroy()
+        self.blank_label8.destroy()
+        self.back_to_main.destroy()
+        self.blank_label6.destroy()
 class MemoryManagement:
     def __init__(self):
         self.blank_label2 = Label(root, text='', height=1)
