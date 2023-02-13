@@ -192,6 +192,9 @@ class MemoryManagement:
         self.lruimpl.pack()
         self.blank_label4 = Label(root, text='', height=1)
         self.blank_label4.pack()
+        self.back_to_main = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.back_to_m)
+        self.back_to_main.configure(bd=2)
+        self.back_to_main.pack()
 class IO_Management:
     def __init__(self):
         self.manage_label = Label(root, text="I/O Management Block")
