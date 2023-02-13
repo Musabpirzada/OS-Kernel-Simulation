@@ -5,7 +5,8 @@ screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 # Set the window size to the screen size
 root.geometry(f"{screen_width}x{screen_height}")
-
+global pcbdata, memory_dict
+pcbdata = {}
 class Main_Menu:
     def __init__(self, root):
         self.blank_label = Label(root, text='', height=2)
@@ -220,6 +221,30 @@ class MemoryManagement:
         self.back_to_main.destroy()
         self.blank_label4.destroy()
         mm = Main_Menu(root)
+    def paging(self):
+        self.page_size = int(self.page_s_in.get())
+        for key in pcbdata.keys():
+            Process_keys.append(key)
+        for key, value in pcbdata.items():
+            memory_dict[key] = value[4]
+        for value in memory_dict.values():
+            memory_list.append(value)
+        self.process_size = list(map(int, memory_list))
+        for i in self.process_size:
+            self.no_of_pages = i // self.page_size
+            if i % self.page_size != 0:
+                self.no_of_pages += 1
+            pages.append(self.no_of_pages)
+        for keys, i in zip(memory_dict.keys(), pages):
+            for j in range(i):
+                self.show_pages = Label(root, text='Process '+ keys+' :'+' Page: '+ str(j))
+                self.show_pages.pack()
+                show_p.append(self.show_pages)
+
+        self.destroy_elements_for_paging()
+        self.back_to_main = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.back_to_ma)
+        self.back_to_main.configure(bd=2)
+        self.back_to_main.pack()
 class IO_Management:
     def __init__(self):
         self.manage_label = Label(root, text="I/O Management Block")
