@@ -207,6 +207,19 @@ class MemoryManagement:
         self.submit.destroy()
         self.back_to_main.destroy()
         self.blank_label4.destroy()
+    def back_to_m(self):
+        self.blank_label2.destroy()
+        self.blank_label1.destroy()
+        self.blank_label.destroy()
+        self.pagesize_l.destroy()
+        self.label_title.destroy()
+        self.page_s_in.destroy()
+        self.blank_label3.destroy()
+        self.lruimpl.destroy()
+        self.submit.destroy()
+        self.back_to_main.destroy()
+        self.blank_label4.destroy()
+        mm = Main_Menu(root)
 class IO_Management:
     def __init__(self):
         self.manage_label = Label(root, text="I/O Management Block")
