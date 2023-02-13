@@ -5,8 +5,18 @@ screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 # Set the window size to the screen size
 root.geometry(f"{screen_width}x{screen_height}")
-global pcbdata, memory_dict
+global pcbdata, memory_dict,widgets, keyss, fcfs_widgets, short_widgets, keyss_short, Main_memory, memory_list,pages,Process_keys, show_p, lru_save
 pcbdata = {}
+lru_save = []
+widgets = []
+show_p = []
+keyss = []
+fcfs_widgets = []
+keyss_short = []
+short_widgets = []
+memory_list = []
+pages = []
+Process_keys = []
 class Main_Menu:
     def __init__(self, root):
         self.blank_label = Label(root, text='', height=2)
