@@ -1,4 +1,8 @@
 from tkinter import *
+import time
+from collections import deque
+from threading import Semaphore
+import math
 root = Tk()
 root.title("FASTEffos") #OS name
 screen_width = root.winfo_screenwidth()
@@ -279,6 +283,12 @@ class MemoryManagement:
         self.back_to_main = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.back_to_mai)
         self.back_to_main.configure(bd=2)
         self.back_to_main.pack()
+    def back_to_mai(self):
+        for items in lru_save:
+            items.destroy()
+        self.back_to_main.destroy()
+        self.label_title.destroy()
+        m = Main_Menu(root)
 class IO_Management:
     def __init__(self):
         self.manage_label = Label(root, text="I/O Management Block")
