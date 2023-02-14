@@ -75,7 +75,6 @@ class Main_Menu:
         self.btn_io_m.destroy()
         self.btn_sync.destroy()
         self.blank_label4.destroy()
-
 class ProcessManagement:
     def __init__(self):
         self.blank_label = Label(root, text='', height=1)
@@ -253,6 +252,31 @@ class MemoryManagement:
 
         self.destroy_elements_for_paging()
         self.back_to_main = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.back_to_ma)
+        self.back_to_main.configure(bd=2)
+        self.back_to_main.pack()
+
+    def back_to_ma(self):
+        for items in show_p:
+            items.destroy()
+        self.back_to_main.destroy()
+        self.label_title.destroy()
+        m = Main_Menu(root)
+    def LRU(self):
+        # self.framel = Label(root, text='Enter Frame Number: ')
+        # self.framel.pack()
+        self.framesize = Entry(root, width=20)
+        self.process_string = [1, 2, 1, 3, 4, 2, 4, 3, 1, 2]
+        q = deque()
+        for i in range(len(self.process_string)):
+            if len(q) == 4:
+                q.popleft()
+            q.append(self.process_string[i])
+            self.listofq = str(list(q))
+            self.lruprint = Label(root, text=self.listofq)
+            self.lruprint.pack()
+            lru_save.append(self.lruprint)
+        self.destroy_elements_for_paging()
+        self.back_to_main = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.back_to_mai)
         self.back_to_main.configure(bd=2)
         self.back_to_main.pack()
 class IO_Management:
