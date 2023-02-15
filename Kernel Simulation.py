@@ -377,6 +377,33 @@ class Create:
         self.destroy_create_elements()
         pm = ProcessManagement()
         return pcbdata
+    def back_to_process_log(self):
+        self.destroy_create_elements()
+        pm1 = ProcessManagement()
+    def destroy_create_elements(self):
+        self.blank_label.destroy()
+        self.blank_label7.destroy()
+        self.createbtn.destroy()
+        self.blank_label2.destroy()
+        self.blank_label3.destroy()
+        self.blank_label4.destroy()
+        self.blank_label5.destroy()
+        self.blank_label1.destroy()
+        self.blank_label6.destroy()
+        self.state.destroy()
+        self.statel.destroy()
+        self.priority.destroy()
+        self.priorityl.destroy()
+        self.id.destroy()
+        self.idl.destroy()
+        self.burstl.destroy()
+        self.burstin.destroy()
+        self.arrivaltl.destroy()
+        self.arrivalt.destroy()
+        self.memory_reql.destroy()
+        self.memory_req.destroy()
+        self.back_to_process.destroy()
+        self.register.destroy()
 class destroyProcess:
     def __init__(self):
         pass
