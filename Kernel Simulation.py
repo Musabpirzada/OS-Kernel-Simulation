@@ -312,6 +312,22 @@ class Create:
         self.id.pack()
         self.blank_label = Label(root, text='', height=1)
         self.blank_label.pack()
+        self.statel = Label(root, text='Enter Current State:')
+        self.statel.pack()
+        self.state = OptionMenu(root, self.selected_value, *self.options)
+        self.state.pack()
+        self.blank_label1 = Label(root, text='', height=1)
+        self.blank_label1.pack()
+        self.priorityl = Label(root, text='Enter Current Priority: (1-10)')
+        self.priorityl.pack()
+        self.priority = Entry(root, width=40)
+        self.priority.pack()
+        self.blank_label4 = Label(root, text='', height=1)
+        self.blank_label4.pack()
+        self.arrivaltl = Label(root, text='Enter Arrival Time: ')
+        self.arrivaltl.pack()
+        self.arrivalt = Entry(root, width=40)
+        self.arrivalt.pack()
 class destroyProcess:
     def __init__(self):
         pass
