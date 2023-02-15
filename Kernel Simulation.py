@@ -364,6 +364,19 @@ class Create:
             self.burstin.delete(0, 'end')
         else:
             self.createfunc()
+    def createfunc(self):
+        valueslist = []
+        valueslist.append(self.selected_value.get())
+        valueslist.append(self.priority.get())
+        valueslist.append(self.arrivalt.get())
+        valueslist.append(self.burstin.get())
+        valueslist.append(self.memory_req.get())
+        valueslist.append(self.selected_register.get())
+        key = self.id.get()
+        pcbdata[key] = valueslist
+        self.destroy_create_elements()
+        pm = ProcessManagement()
+        return pcbdata
 class destroyProcess:
     def __init__(self):
         pass
