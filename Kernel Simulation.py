@@ -298,7 +298,20 @@ class synchronization:
         pass
 class Create:
     def __init__(self):
-        pass
+        self.registers = ['ACC', 'MDR', 'MAR', 'CIR']
+        self.selected_register = StringVar()
+        self.selected_register.set('ACC')
+        self.selected_value = StringVar()
+        self.options = ['Ready']
+        self.selected_value.set('Ready')
+        self.blank_label5 = Label(root, text='', height=3)
+        self.blank_label5.pack()
+        self.idl = Label(root, text='Enter ID:')
+        self.idl.pack()
+        self.id = Entry(root, width=20)
+        self.id.pack()
+        self.blank_label = Label(root, text='', height=1)
+        self.blank_label.pack()
 class destroyProcess:
     def __init__(self):
         pass
