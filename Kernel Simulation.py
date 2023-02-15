@@ -344,6 +344,15 @@ class Create:
         self.arrivaltl.pack()
         self.arrivalt = Entry(root, width=40)
         self.arrivalt.pack()
+        self.register = OptionMenu(root, self.selected_register, *self.registers)
+        self.register.pack()
+        self.createbtn = Button(root, text='CREATE PROCESS', padx=50, command=self.validation, fg="White",bg='Dark Green', font='Times 20 bold')
+        self.createbtn.pack()
+        self.blank_label6 = Label(root, text='', height=1)
+        self.blank_label6.pack()
+        self.back_to_process = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.back_to_process_log)
+        self.back_to_process.configure(bd=2)
+        self.back_to_process.pack()
 class destroyProcess:
     def __init__(self):
         pass
