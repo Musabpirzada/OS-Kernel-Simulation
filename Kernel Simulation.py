@@ -406,7 +406,16 @@ class Create:
         self.register.destroy()
 class destroyProcess:
     def __init__(self):
-        pass
+        self.blank_label = Label(root, text='', height=3)
+        self.blank_label.pack()
+        self.didl = Label(root, text='Enter Process ID to Delete:')
+        self.didl.pack()
+        self.did = Entry(root, width=10)
+        self.did.pack()
+        self.blank_label1 = Label(root, text='', height=2)
+        self.blank_label1.pack()
+        self.destroybtn = Button(root, text='Destroy Process', command=self.destroypf, padx=40, fg="White",bg='Dark Green', font='Times 20 bold')
+        self.destroybtn.pack()
 class suspendprocess:
     def __init__(self):
         pass
