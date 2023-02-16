@@ -421,6 +421,18 @@ class destroyProcess:
         self.back_to_process = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.back_to_pr_log)
         self.back_to_process.configure(bd=2)
         self.back_to_process.pack()
+    def destroypf(self):
+        if self.did.get() in pcbdata.keys():
+            del pcbdata[self.did.get()]
+            self.destroy_destroy_elements()
+            ppm = ProcessManagement()
+        else:
+            self.noprocess = Label(root, text='There is no such Process')
+            self.noprocess.pack()
+        return pcbdata
+    def back_to_pr_log(self):
+        self.destroy_destroy_elements()
+        pm1 = ProcessManagement()
 class suspendprocess:
     def __init__(self):
         pass
