@@ -433,6 +433,14 @@ class destroyProcess:
     def back_to_pr_log(self):
         self.destroy_destroy_elements()
         pm1 = ProcessManagement()
+    def destroy_destroy_elements(self):
+        self.blank_label.destroy()
+        self.didl.destroy()
+        self.did.destroy()
+        self.blank_label1.destroy()
+        self.destroybtn.destroy()
+        self.back_to_process.destroy()
+        self.blank_label2.destroy()
 class suspendprocess:
     def __init__(self):
         pass
