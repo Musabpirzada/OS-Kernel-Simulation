@@ -416,6 +416,11 @@ class destroyProcess:
         self.blank_label1.pack()
         self.destroybtn = Button(root, text='Destroy Process', command=self.destroypf, padx=40, fg="White",bg='Dark Green', font='Times 20 bold')
         self.destroybtn.pack()
+        self.blank_label2 = Label(root, text='', height=2)
+        self.blank_label2.pack()
+        self.back_to_process = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.back_to_pr_log)
+        self.back_to_process.configure(bd=2)
+        self.back_to_process.pack()
 class suspendprocess:
     def __init__(self):
         pass
