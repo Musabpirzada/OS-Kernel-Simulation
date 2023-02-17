@@ -579,6 +579,25 @@ class process_priority_change:
         self.ppchangel.destroy()
         #self.noprocess.destroy()
         pm2 = ProcessManagement()
+    def pp_updated(self):
+        data_list = pcbdata[self.ppchange.get()]
+        data_list[1] = self.newpriorityin.get()
+        pcbdata[self.ppchange.get()] = data_list
+        #return pcbdata
+    def processpchange(self):
+        self.pp_updated()
+        self.cancelchng()
+    def back_to_pro_log(self):
+        self.destroy_priority_elements()
+        pm2 = ProcessManagement()
+    def destroy_priority_elements(self):
+        self.blank_label.destroy()
+        self.blank_label1.destroy()
+        #self.ppchangel.destroy()
+        #self.ppchange.destroy()
+        self.ppchnagebtn.destroy()
+        self.blank_label2.destroy()
+        self.back_to_process1.destroy()
 class dispatch_and_scheduling:
     def __init__(self):
         pass
