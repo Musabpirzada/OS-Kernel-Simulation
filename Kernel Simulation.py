@@ -566,6 +566,19 @@ class process_priority_change:
             self.noprocess = Label(root, text='No such Process')
             self.noprocess.pack()
             self.destroy_priority_elements()
+    def cancelchng(self):
+        self.previouspriority.destroy()
+        self.blank_label3.destroy()
+        self.newpriority.destroy()
+        self.newpriorityin.destroy()
+        self.updatebtn.destroy()
+        self.blank_label4.destroy()
+        self.cancelchange.destroy()
+        self.blank_label5.destroy()
+        self.ppchange.destroy()
+        self.ppchangel.destroy()
+        #self.noprocess.destroy()
+        pm2 = ProcessManagement()
 class dispatch_and_scheduling:
     def __init__(self):
         pass
