@@ -458,6 +458,17 @@ class suspendprocess:
         self.back_to_process = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.back_to_pr_log)
         self.back_to_process.configure(bd=2)
         self.back_to_process.pack()
+    def suspendpro(self):
+        if self.suspp.get() in pcbdata.keys():
+            state = pcbdata[self.suspp.get()]
+            state[0] = 'Blocked'
+            pcbdata[self.suspp.get()] = state
+            self.destroy_suspend_elements()
+            pmm = ProcessManagement()
+        else:
+            self.noprocess = Label(root, text='No such Process')
+            self.noprocess.pack()
+        return pcbdata
 class resume_process_block:
     def __init__(self):
         pass
