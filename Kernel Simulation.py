@@ -443,7 +443,21 @@ class destroyProcess:
         self.blank_label2.destroy()
 class suspendprocess:
     def __init__(self):
-        pass
+        self.blank_label = Label(root, text='', height=3)
+        self.blank_label.pack()
+        self.susppl = Label(root, text='Enter Process ID to Suspend:')
+        self.susppl.pack()
+        self.suspp = Entry(root, width=20)
+        self.suspp.pack()
+        self.blank_label1 = Label(root, text='', height=3)
+        self.blank_label1.pack()
+        self.suspendbtn = Button(root, text='Suspend Process', command=self.suspendpro, padx=40, fg="White",bg='Dark Green', font='Times 20 bold')
+        self.suspendbtn.pack()
+        self.blank_label2 = Label(root, text='', height=2)
+        self.blank_label2.pack()
+        self.back_to_process = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.back_to_pr_log)
+        self.back_to_process.configure(bd=2)
+        self.back_to_process.pack()
 class resume_process_block:
     def __init__(self):
         pass
