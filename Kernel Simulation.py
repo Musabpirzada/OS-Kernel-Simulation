@@ -469,6 +469,17 @@ class suspendprocess:
             self.noprocess = Label(root, text='No such Process')
             self.noprocess.pack()
         return pcbdata
+    def back_to_pr_log(self):
+        self.destroy_suspend_elements()
+        pm1 = ProcessManagement()
+    def destroy_suspend_elements(self):
+        self.blank_label.destroy()
+        self.susppl.destroy()
+        self.suspp.destroy()
+        self.blank_label1.destroy()
+        self.suspendbtn.destroy()
+        self.back_to_process.destroy()
+        self.blank_label2.destroy()
 class resume_process_block:
     def __init__(self):
         pass
