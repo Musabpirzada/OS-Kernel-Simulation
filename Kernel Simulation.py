@@ -542,6 +542,30 @@ class process_priority_change:
                                        command=self.back_to_pro_log)
         self.back_to_process1.configure(bd=2)
         self.back_to_process1.pack()
+    def propri(self):
+        if self.ppchange.get() in pcbdata.keys():
+            prepriority = pcbdata[self.ppchange.get()]
+            self.previouspriority = Label(root, text='Previous Priority: '+prepriority[1])
+            self.previouspriority.pack()
+            self.blank_label3 = Label(root, text='', height=1)
+            self.blank_label3.pack()
+            self.newpriority = Label(root, text='Enter New Priority: ')
+            self.newpriority.pack()
+            self.newpriorityin = Entry(root, width=20)
+            self.newpriorityin.pack()
+            self.blank_label5 = Label(root, text='', height=1)
+            self.blank_label5.pack()
+            self.updatebtn = Button(root, text='Update Priority', command=self.processpchange)
+            self.updatebtn.pack()
+            self.blank_label4 = Label(root, text='', height=1)
+            self.blank_label4.pack()
+            self.cancelchange = Button(root, text='Cancel', command=self.cancelchng, font='Times 16 bold', fg='Black', bg='Yellow')
+            self.cancelchange.pack()
+            self.destroy_priority_elements()
+        else:
+            self.noprocess = Label(root, text='No such Process')
+            self.noprocess.pack()
+            self.destroy_priority_elements()
 class dispatch_and_scheduling:
     def __init__(self):
         pass
