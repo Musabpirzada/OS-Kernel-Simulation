@@ -593,8 +593,6 @@ class process_priority_change:
     def destroy_priority_elements(self):
         self.blank_label.destroy()
         self.blank_label1.destroy()
-        #self.ppchangel.destroy()
-        #self.ppchange.destroy()
         self.ppchnagebtn.destroy()
         self.blank_label2.destroy()
         self.back_to_process1.destroy()
