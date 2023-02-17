@@ -509,6 +509,20 @@ class resume_process_block:
         self.resumebtn.destroy()
         self.back_to_process.destroy()
         self.blank_label2.destroy()
+    def resumepro(self):
+        if self.resup.get() in pcbdata.keys():
+            state = pcbdata[self.resup.get()]
+            if state[0] == 'Blocked':
+                state[0] = 'ready'
+                pcbdata[self.resup.get()] = state
+                pmm1 = ProcessManagement()
+            else:
+                self.noblocked = Label(root, text='No Process in Blocked State')
+                self.noblocked.pack()
+        else:
+            self.noprocess = Label(root, text='No such Process')
+            self.noprocess.pack()
+        return pcbdata
 class process_priority_change:
     def __init__(self):
         pass
