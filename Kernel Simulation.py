@@ -525,7 +525,23 @@ class resume_process_block:
         return pcbdata
 class process_priority_change:
     def __init__(self):
-        pass
+        self.blank_label = Label(root, text='', height=1)
+        self.blank_label.pack()
+        self.ppchangel = Label(root, text='Enter Process ID to Change Priority:')
+        self.ppchangel.pack()
+        self.ppchange = Entry(root, width=20)
+        self.ppchange.pack()
+        self.blank_label1 = Label(root, text='', height=1)
+        self.blank_label1.pack()
+        self.ppchnagebtn = Button(root, text='Change Process Priority', command=self.propri, padx=40, fg="White",
+                                  bg='Dark Green', font='Times 20 bold')
+        self.ppchnagebtn.pack()
+        self.blank_label2 = Label(root, text='', height=1)
+        self.blank_label2.pack()
+        self.back_to_process1 = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',
+                                       command=self.back_to_pro_log)
+        self.back_to_process1.configure(bd=2)
+        self.back_to_process1.pack()
 class dispatch_and_scheduling:
     def __init__(self):
         pass
