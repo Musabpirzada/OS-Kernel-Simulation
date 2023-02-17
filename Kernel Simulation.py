@@ -497,6 +497,18 @@ class resume_process_block:
         self.back_to_process = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.back_to_pr_log)
         self.back_to_process.configure(bd=2)
         self.back_to_process.pack()
+    def back_to_pr_log(self):
+        self.destroy_resume_elements()
+        pm1 = ProcessManagement()
+
+    def destroy_resume_elements(self):
+        self.blank_label.destroy()
+        self.resup.destroy()
+        self.resupl.destroy()
+        self.blank_label1.destroy()
+        self.resumebtn.destroy()
+        self.back_to_process.destroy()
+        self.blank_label2.destroy()
 class process_priority_change:
     def __init__(self):
         pass
