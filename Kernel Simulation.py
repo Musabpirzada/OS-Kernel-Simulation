@@ -306,6 +306,28 @@ class synchronization:
             sync[resource] = keys
         resources = {'ALU': ['Resource1', 'Resource2', 'Resource3'], 'MDR': ['Resource4', 'Resource5'],
                      'MAR': ['Resource6']}
+        Resource1_sem = Semaphore(1)
+        Resource2_sem = Semaphore(1)
+        Resource3_sem = Semaphore(1)
+        Resource4_sem = Semaphore(1)
+        Resource5_sem = Semaphore(1)
+        Resource6_sem = Semaphore(1)
+
+        output_label = Label(root, text="", font=("Arial", 12))
+        output_label.pack()
+        message = ""
+        for resource, keys in sync.items():
+            message += f"Processes {keys} are sharing the following resources: {resources[resource]}\n"
+            for res in resources[resource]:
+                eval(res + "_sem").acquire()
+                message += res + " acquired\n"
+                output_label.configure(text=message)
+                root.update()
+            for res in resources[resource]:
+                eval(res + "_sem").release()
+                message += res + " released\n"
+                output_label.configure(text=message)
+                root.update()
 class Create:
     def __init__(self):
         self.registers = ['ACC', 'MDR', 'MAR', 'CIR']
