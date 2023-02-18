@@ -661,6 +661,11 @@ class dispatch_and_scheduling:
         self.back_to_pm = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.destroy_fcfs_progress)
         self.back_to_pm.configure(bd=2)
         self.back_to_pm.pack()
+    def destroy_fcfs_progress(self):
+        for items in fcfs_widgets:
+            items.destroy()
+        self.back_to_pm.destroy()
+        pmmm = ProcessManagement()
 class Show_Processes:
     def __init__(self):
         pass
