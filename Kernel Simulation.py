@@ -720,7 +720,22 @@ class dispatch_and_scheduling:
         self.back_to_pro.destroy()
 class Show_Processes:
     def __init__(self):
-        pass
+        self.black_label = Label(root, text='', height=2)
+        self.black_label.pack()
+        self.show_by_id = Button(root, text='Show Process By ID', command=self.show_by_id_func, padx=40, fg='Black',
+                                 bg='Pink')
+        self.show_by_id.pack()
+        self.black_label1 = Label(root, text='', height=2)
+        self.black_label1.pack()
+        self.show_all = Button(root, text='Show All Process', command=self.show_all_process, padx=45, fg='Black',
+                               bg='Pink')
+        self.show_all.pack()
+        self.black_label2 = Label(root, text='', height=2)
+        self.black_label2.pack()
+        self.back_to_process1 = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',
+                                       command=self.back_to_pro_log)
+        self.back_to_process1.configure(bd=2)
+        self.back_to_process1.pack()
 
 m_m = Main_Menu(root)
 root.mainloop()
