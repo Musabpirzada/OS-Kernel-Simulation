@@ -786,6 +786,24 @@ class Show_Processes:
         self.back_to_process3 = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow', command=self.back_in_show_id_1)
         self.back_to_process3.configure(bd=2)
         self.back_to_process3.pack()
+    def id_search(self):
+        if self.enterid.get() in pcbdata.keys():
+            list_of_data = pcbdata[self.enterid.get()]
+            self.state = Label(root, text='State: '+list_of_data[0])
+            self.state.pack()
+            self.priority = Label(root, text='Priority: '+list_of_data[1])
+            self.priority.pack()
+            self.arrival_time = Label(root, text='Arrival Time: '+list_of_data[2])
+            self.arrival_time.pack()
+            self.burst_time = Label(root, text='Burst Time: ' + list_of_data[3])
+            self.burst_time.pack()
+            self.memory_space = Label(root, text='Memory Space: '+list_of_data[4])
+            self.memory_space.pack()
+            self.registers_l = Label(root, text='Register: ' + list_of_data[5])
+            self.registers_l.pack()
+        else:
+            self.noprocess = Label(root, text='No such Process')
+            self.noprocess.pack()
 
 m_m = Main_Menu(root)
 root.mainloop()
