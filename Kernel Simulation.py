@@ -808,8 +808,6 @@ class Show_Processes:
         for items in widgets:
             items.destroy()
         self.back_to_process2.destroy()
-        #self.noprocesssl.destroy()
-
         pml = ProcessManagement()
 
     def show_all_process(self):
@@ -819,6 +817,38 @@ class Show_Processes:
         self.show_by_id.destroy()
         self.show_all.destroy()
         self.back_to_process1.destroy()
+
+        for key, value in pcbdata.items():
+            self.linelabel = Label(root, text='--------------------------')
+            self.linelabel.pack()
+            self.key = Label(root, text='ID: ' + key)
+            self.key.pack()
+            list_of_data_id = pcbdata[key]
+            self.statesl = Label(root, text='State: ' + list_of_data_id[0])
+            self.statesl.pack()
+            self.prioritysl = Label(root, text='Priority: ' + list_of_data_id[1])
+            self.prioritysl.pack()
+            self.arrival_timesl = Label(root, text='Arrival Time Time: ' + list_of_data_id[2])
+            self.arrival_timesl.pack()
+            self.burst_timesl = Label(root, text='Burst Time: ' + list_of_data_id[3])
+            self.burst_timesl.pack()
+            self.memory_spacesl = Label(root, text='Memory Space: ' + list_of_data_id[4])
+            self.memory_spacesl.pack()
+            self.registersl = Label(root, text='Register: ' + list_of_data_id[5])
+            self.registersl.pack()
+            widgets.append(self.linelabel)
+            widgets.append(self.key)
+            widgets.append(self.statesl)
+            widgets.append(self.prioritysl)
+            widgets.append(self.arrival_timesl)
+            widgets.append(self.burst_timesl)
+            widgets.append(self.memory_spacesl)
+            widgets.append(self.registersl)
+
+        self.back_to_process2 = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',
+                                       command=self.back_in_p_l)
+        self.back_to_process2.configure(bd=2)
+        self.back_to_process2.pack()
 
 m_m = Main_Menu(root)
 root.mainloop()
