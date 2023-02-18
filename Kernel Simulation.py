@@ -598,7 +598,21 @@ class process_priority_change:
         self.back_to_process1.destroy()
 class dispatch_and_scheduling:
     def __init__(self):
-        pass
+        self.blank_label = Label(root, text='', height=2)
+        self.blank_label.pack()
+        self.fcfs = Button(root, text='FCFS', command=self.fcfs_func, padx=40, fg='White', bg='Black', height=2,
+                           font='Times 18 bold')
+        self.fcfs.pack()
+        self.blank_label1 = Label(root, text='', height=2)
+        self.blank_label1.pack()
+        self.shortest_job = Button(root, text='SJS', command=self.shortest_job_func, padx=50, fg='White', bg='Black',
+                                   height=2, font='Times 18 bold')
+        self.shortest_job.pack()
+        self.blank_label2 = Label(root, text='', height=2)
+        self.blank_label2.pack()
+        self.back_to_pro = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow', command=self.backk)
+        self.back_to_pro.configure(bd=2)
+        self.back_to_pro.pack()
 class Show_Processes:
     def __init__(self):
         pass
