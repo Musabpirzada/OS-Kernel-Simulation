@@ -613,6 +613,17 @@ class dispatch_and_scheduling:
         self.back_to_pro = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow', command=self.backk)
         self.back_to_pro.configure(bd=2)
         self.back_to_pro.pack()
+    def backk(self):
+        self.blank_label.destroy()
+        self.blank_label2.destroy()
+        self.blank_label1.destroy()
+        self.fcfs.destroy()
+        self.shortest_job.destroy()
+        self.back_to_pro.destroy()
+        ppp = ProcessManagement()
+    def back_btn(self):
+        self.destroy_fcfs_shortest_buttons()
+        pro = ProcessManagement()
 class Show_Processes:
     def __init__(self):
         pass
