@@ -295,7 +295,17 @@ class IO_Management:
         self.manage_label.pack()
 class synchronization:
     def __init__(self):
-        pass
+        key_resource = {}
+        sync = {}
+        # extract keys and resource names from pcbdata
+        for key in pcbdata.keys():
+            resource = pcbdata[key][5]
+            key_resource.setdefault(resource, []).append(key)
+        # create a dictionary with keys as resource names and values as lists of keys
+        for resource, keys in key_resource.items():
+            sync[resource] = keys
+        resources = {'ALU': ['Resource1', 'Resource2', 'Resource3'], 'MDR': ['Resource4', 'Resource5'],
+                     'MAR': ['Resource6']}
 class Create:
     def __init__(self):
         self.registers = ['ACC', 'MDR', 'MAR', 'CIR']
