@@ -666,6 +666,46 @@ class dispatch_and_scheduling:
             items.destroy()
         self.back_to_pm.destroy()
         pmmm = ProcessManagement()
+    def shortest_job_func(self):
+        self.destroy_fcfs_shortest_buttons()
+        self.arrival_data_s = []
+        self.burst_data_s = []
+        self.shortest_time = []
+        for value in pcbdata.values():
+            arrival = value[2]
+            self.arrival_data_s.append(arrival)
+        for value in pcbdata.values():
+            burst = value[3]
+            self.burst_data_s.append(burst)
+        self.arrival_time_s = list(map(int, self.arrival_data_s))
+        self.burst_time_s = list(map(int, self.burst_data_s))
+        for i, j in zip(self.arrival_time_s, self.burst_time_s):
+            shortest = j - i
+            self.shortest_time.append(shortest)
+        for i in range(len(self.shortest_time)):
+            self.minimum_value_s = min(self.shortest_time)
+            self.first_process_index_s = self.shortest_time.index(self.minimum_value_s)
+            self.arrival_value_s = self.arrival_time_s[self.first_process_index_s]
+            self.shortest_value = self.shortest_time[self.first_process_index_s]
+            for i in range(self.shortest_value):
+                self.sleep_value = 2
+                for key, value in pcbdata.items():
+                    if str(self.arrival_value_s) in value:
+                        # self.process_going = Label(root, text='Process in Progress: ' + key)
+                        # self.process_going.pack()
+                        time.sleep(self.sleep_value)
+                        self.process_completed = Label(root, text='Process ' + key + ' done')
+                        self.process_completed.pack()
+                        keyss_short.append(key)
+                        #short_widgets.append(self.process_going)
+                        short_widgets.append(self.process_completed)
+                break
+            self.shortest_time.remove(self.shortest_value)
+        for i in keyss_short:
+            del pcbdata[i]
+        self.back_to_pm = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.destroy_shortest_job)
+        self.back_to_pm.configure(bd=2)
+        self.back_to_pm.pack()
 class Show_Processes:
     def __init__(self):
         pass
