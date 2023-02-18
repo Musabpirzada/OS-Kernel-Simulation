@@ -706,6 +706,18 @@ class dispatch_and_scheduling:
         self.back_to_pm = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.destroy_shortest_job)
         self.back_to_pm.configure(bd=2)
         self.back_to_pm.pack()
+    def destroy_shortest_job(self):
+        for items in short_widgets:
+            items.destroy()
+        self.back_to_pm.destroy()
+        pmmm = ProcessManagement()
+    def destroy_fcfs_shortest_buttons(self):
+        self.fcfs.destroy()
+        self.shortest_job.destroy()
+        self.blank_label.destroy()
+        self.blank_label1.destroy()
+        self.blank_label2.destroy()
+        self.back_to_pro.destroy()
 class Show_Processes:
     def __init__(self):
         pass
