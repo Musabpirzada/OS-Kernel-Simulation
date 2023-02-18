@@ -624,6 +624,43 @@ class dispatch_and_scheduling:
     def back_btn(self):
         self.destroy_fcfs_shortest_buttons()
         pro = ProcessManagement()
+    def fcfs_func(self):
+        self.destroy_fcfs_shortest_buttons()
+        self.arrival_data = []
+        self.burst_data = []
+        for value in pcbdata.values():
+            self.arrival = value[2]
+            self.arrival_data.append(self.arrival)
+        for value in pcbdata.values():
+            self.burst = value[3]
+            self.burst_data.append(self.burst)
+        self.arrival_time = list(map(int, self.arrival_data))
+        self.burst_time = list(map(int, self.burst_data))
+        for i in range(len(self.arrival_time)):
+            self.minimum_value = min(self.arrival_time)
+            self.first_process_index = self.arrival_time.index(self.minimum_value)
+            self.burst_time_index = self.first_process_index
+            self.arrival_value = self.arrival_time[self.first_process_index]
+            self.burst_value = self.burst_time[self.burst_time_index]
+            for i in range(self.arrival_value, self.burst_value):
+                for key, value in pcbdata.items():
+                    if str(self.arrival_value) in value:
+                        # self.process_going = Label(root, text='Process in Progress: ' +key)
+                        # self.process_going.pack()
+                        time.sleep(2)
+                        self.process_completed = Label(root, text='Process '+key+' done')
+                        self.process_completed.pack()
+                        keyss.append(key)
+                        #fcfs_widgets.append(self.process_going)
+                        fcfs_widgets.append(self.process_completed)
+                break
+            self.arrival_time.remove(self.arrival_value)
+            self.burst_time.remove(self.burst_value)
+        for i in keyss:
+            del pcbdata[i]
+        self.back_to_pm = Button(root, text="BACK", font='Times 16 bold', fg='Black', bg='Yellow',command=self.destroy_fcfs_progress)
+        self.back_to_pm.configure(bd=2)
+        self.back_to_pm.pack()
 class Show_Processes:
     def __init__(self):
         pass
