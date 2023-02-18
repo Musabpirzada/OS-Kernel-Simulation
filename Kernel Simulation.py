@@ -804,6 +804,21 @@ class Show_Processes:
         else:
             self.noprocess = Label(root, text='No such Process')
             self.noprocess.pack()
+    def back_in_p_l(self):
+        for items in widgets:
+            items.destroy()
+        self.back_to_process2.destroy()
+        #self.noprocesssl.destroy()
+
+        pml = ProcessManagement()
+
+    def show_all_process(self):
+        self.black_label.destroy()
+        self.black_label1.destroy()
+        self.black_label2.destroy()
+        self.show_by_id.destroy()
+        self.show_all.destroy()
+        self.back_to_process1.destroy()
 
 m_m = Main_Menu(root)
 root.mainloop()
